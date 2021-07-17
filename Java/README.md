@@ -1,1 +1,3 @@
-
+|          Subdomain          | Difficulty |                                                           Challenge                                                            |                                                                         Solution 
+| :-------------------------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|        Introduction         |    Easy    |                       [Welcome to Java!](https://www.hackerrank.com/challenges/welcome-to-java/problem)                        |            [Welcome-to-java.java](https://github.com/Mann-tech13/HackerRank/blob/master/Java/Introduction/Welcome%20to%20Java.java)             |
