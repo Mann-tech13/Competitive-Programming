@@ -1,25 +1,37 @@
 class Solution {
-    
-    public boolean helper(TreeNode node, int k, HashSet<Integer> set) {
-        if(node == null) {
-            return false;       
-        }
-        if(set.contains(k - node.val)) {
-            return true;
-        }
-        else {
-            set.add(node.val);
+    public boolean findTarget(TreeNode root, int k) {
+        
+        if(root==null) {
+            return false;
         }
         
-        boolean lans = helper(node.left, k, set);
-        if(lans) return true;
-        boolean rans = helper(node.right, k, set);
-        if(rans) return true;
+        List<Integer> list = new ArrayList<>();
+        TreeToList(root,list);
         
+        int i=0;
+        int j=list.size()-1;
+        
+        while(i<j) {
+            if(list.get(i)+list.get(j)<k) {
+                i++;
+            } 
+            else if(list.get(i)+list.get(j)>k) {
+                j--;
+            } 
+            else {
+                return true;
+            }
+        }
         return false;
     }
-    public boolean findTarget(TreeNode root, int k) {
-        HashSet<Integer> set = new HashSet<>();
-        return helper(root, k, set);
+    
+    void TreeToList(TreeNode root, List<Integer> list) {
+        if(root==null) {
+            return;
+        }       
+        TreeToList(root.left,list);
+        list.add(root.val);
+        TreeToList(root.right,list);
+        
     }
 }
